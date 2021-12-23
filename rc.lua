@@ -28,9 +28,10 @@ modkey = RC.vars.modkey
 
 -- Custom Local Library
 local main = {
-  layouts = require("main.layouts"),
-  tags    = require("main.tags"),
-  rules   = require("main.rules"),
+  layouts   = require("main.layouts"),
+  tags      = require("main.tags"),
+  rules     = require("main.rules"),
+  autostart = require("main.autostart")
 }
 
 -- Custom Local Library: Keys and Mouse Binding
