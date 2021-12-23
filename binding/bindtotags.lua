@@ -1,23 +1,15 @@
--- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
 
 local _M = {}
 local modkey = RC.vars.modkey
 
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-
--- {{{ Key bindings
 
 function _M.get(globalkeys)
-  -- Bind all key numbers to tags.
-  -- Be careful: we use keycodes to make it work on any keyboard layout.
-  -- This should map on the top row of your keyboard, usually 1 to 9.
   for i = 1, 9 do
     globalkeys = gears.table.join(globalkeys,
     
-      --  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-      -- View tag only.
+      -- Переход к рабочему столу
       awful.key({ modkey }, "#" .. i + 9,
         function ()
           local screen = awful.screen.focused()
@@ -26,10 +18,9 @@ function _M.get(globalkeys)
             tag:view_only()
           end
         end,
-        {description = "view tag #"..i, group = "tag"}),
+        {description = "Перейти на стол "..i, group = "Тэги"}),
 
-      --  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-      -- Toggle tag display.
+      -- Присоединение с рабочего стола
       awful.key({ modkey, "Control" }, "#" .. i + 9,
         function ()
           local screen = awful.screen.focused()
@@ -38,10 +29,9 @@ function _M.get(globalkeys)
             awful.tag.viewtoggle(tag)
           end
         end,
-        {description = "toggle tag #" .. i, group = "tag"}),
+        {description = "Присоединить всё со стола " .. i, group = "Тэги"}),
       
-      --  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-      -- Move client to tag.
+      -- Переместить окно на рабочий стол
       awful.key({ modkey, "Shift" }, "#" .. i + 9,
         function ()
           if client.focus then
@@ -51,10 +41,9 @@ function _M.get(globalkeys)
             end
           end
         end,
-        {description = "move focused client to tag #"..i, group = "tag"}),
+        {description = "Переместить окно на стол "..i, group = "Тэги"}),
       
-      --  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-      -- Toggle tag on focused client.
+      -- Дублирование отображение окна на рабочий стол
       awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
         function ()
           if client.focus then
@@ -64,16 +53,13 @@ function _M.get(globalkeys)
             end
           end
         end,
-        {description = "toggle focused client on tag #" .. i, group = "tag"})
+        {description = "Продублировать окно на стол " .. i, group = "Тэги"})
 
-      --  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
     )
   end
 
   return globalkeys
 end
--- }}}
 
--- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 return setmetatable({}, { __call = function(_, ...) return _M.get(...) end })
