@@ -11,24 +11,51 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
+-- Colors
+theme.black_light = "#60647C"
+theme.black = "#414455"
+theme.black_dark = "#333643"
+theme.red_light = "#C87E86"
+theme.red = "#BA5F68"
+theme.red_dark = "#9D434C"
+theme.green_light = "#B4C6A1"
+theme.green = "#A0B788"
+theme.green_dark = "#82A061"
+theme.yellow_light = "#EACF9D"
+theme.yellow = "#E5C384"
+theme.yellow_dark = "#D8A649"
+theme.blue_light = "#99B1CA"
+theme.blue = "#7F9DBC"
+theme.blue_dark = "#577EA6"
+theme.purple_light = "#BEA1B9"
+theme.purple = "#AD8AA8"
+theme.purple_dark = "#93668C"
+theme.cyan_light = "#9CC9D3"
+theme.cyan = "#82BAC7"
+theme.cyan_dark = "#56A2B3"
+theme.gray_light = "#DADDE7"
+theme.gray = "#D0D4E0"
+theme.gray_dark = "#9CA5BF"
+
 theme.font          = "Roboto 10"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
-theme.bg_urgent     = "#ff0000"
-theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
+theme.bg_normal     = theme.black_dark
+theme.bg_focus      = theme.black
+theme.bg_urgent     = theme.red
+theme.bg_minimize   = theme.black
+theme.bg_systray    = theme.black_dark
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal     = theme.gray_dark
+theme.fg_focus      = theme.gray_light
+theme.fg_urgent     = theme.gray_light
+theme.fg_minimize   = theme.gray_light
 
 theme.useless_gap   = dpi(6)
 theme.border_width  = dpi(1)
-theme.border_normal = "#000000"
-theme.border_focus  = "#535d6c"
-theme.border_marked = "#91231c"
+theme.border_normal = theme.black
+theme.border_focus  = theme.black_dark
+theme.border_marked = theme.red
+
 
 -- There are other variable sets
 -- overriding the default one when
@@ -62,40 +89,15 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
-theme.menu_height = dpi(40)
+theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
--- You can add as many variables as
--- you wish and access them by using
--- beautiful.variable in your rc.lua
---theme.bg_widget = "#cc0000"
-
--- Define the image to load
-theme.titlebar_close_button_normal = themes_path.."default/titlebar/close_normal.png"
-theme.titlebar_close_button_focus  = themes_path.."default/titlebar/close_focus.png"
-
-theme.titlebar_minimize_button_normal = themes_path.."default/titlebar/minimize_normal.png"
-theme.titlebar_minimize_button_focus  = themes_path.."default/titlebar/minimize_focus.png"
-
-theme.titlebar_ontop_button_normal_inactive = themes_path.."default/titlebar/ontop_normal_inactive.png"
-theme.titlebar_ontop_button_focus_inactive  = themes_path.."default/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_active = themes_path.."default/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_active  = themes_path.."default/titlebar/ontop_focus_active.png"
-
-theme.titlebar_sticky_button_normal_inactive = themes_path.."default/titlebar/sticky_normal_inactive.png"
-theme.titlebar_sticky_button_focus_inactive  = themes_path.."default/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_active = themes_path.."default/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_active  = themes_path.."default/titlebar/sticky_focus_active.png"
-
-theme.titlebar_floating_button_normal_inactive = themes_path.."default/titlebar/floating_normal_inactive.png"
-theme.titlebar_floating_button_focus_inactive  = themes_path.."default/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_active = themes_path.."default/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_active  = themes_path.."default/titlebar/floating_focus_active.png"
-
-theme.titlebar_maximized_button_normal_inactive = themes_path.."default/titlebar/maximized_normal_inactive.png"
-theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar/maximized_focus_inactive.png"
-theme.titlebarmaximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
+-- For tabbar
+theme.tabbar_ontop = false
+theme.tabbar_bg_focus = theme.red
+theme.tabbar_bg_focus = theme.yellow
+theme.tabbar_position = "bottom"
+theme.tabber_style = "boxes"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
