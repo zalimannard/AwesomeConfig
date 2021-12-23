@@ -30,7 +30,6 @@ modkey = RC.vars.modkey
 local main = {
   layouts = require("main.layouts"),
   tags    = require("main.tags"),
-  menu    = require("main.menu"),
   rules   = require("main.rules"),
 }
 
@@ -54,21 +53,6 @@ RC.layouts = main.layouts()
 -- Define a tag table which hold all screen tags.
 -- a variable needed in rules, tasklist, and globalkeys
 RC.tags = main.tags()
--- }}}
-
--- {{{ Menu
--- Create a laucher widget and a main menu
-RC.mainmenu = awful.menu({ items = main.menu() }) -- in globalkeys
-
--- a variable needed in statusbar (helper)
-RC.launcher = awful.widget.launcher(
-  { image = beautiful.awesome_icon, menu = RC.mainmenu }
-)
-
--- Menubar configuration
--- Set the terminal for applications that require it
-menubar.utils.terminal = RC.vars.terminal
-
 -- }}}
 
 -- {{{ Mouse and Key bindings
