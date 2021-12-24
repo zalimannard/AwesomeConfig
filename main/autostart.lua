@@ -14,10 +14,11 @@ end
 
 local autostart_commands =
 {
+    "xrandr --output DP-1 --mode 1920x1080",
     "picom --experimental-backends",
+    "xrandr --output DP-1 --mode 1920x1080",
     "setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'",
     "pamixer --set-volume 70",
-    "xrandr --output DP-1 --mode 1920x1080",
     "xinput set-prop 'Wacom Cintiq Pro 16 Touch Finger' 'Coordinate Transformation Matrix' 0.5 0 0.5 0 1 0 0 0 1",
 }
 
