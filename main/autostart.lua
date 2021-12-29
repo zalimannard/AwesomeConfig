@@ -14,6 +14,8 @@ end
 
 local autostart_commands =
 {
+    "killall sh",
+    "killall eww",
     "xrandr --output DP-1 --mode 1920x1080",
     "picom --experimental-backends",
     "xrandr --output DP-1 --mode 1920x1080",
