@@ -20,6 +20,8 @@ local autostart_commands =
     "setxkbmap -layout 'us,ru' -option 'grp:alt_shift_toggle'",
     "pamixer --set-volume 70",
     "xinput set-prop 'Wacom Cintiq Pro 16 Touch Finger' 'Coordinate Transformation Matrix' 0.5 0 0.5 0 1 0 0 0 1",
+    "eww open-many bar_time bar_language bar_power_bluetooth bar_workspaces bar_music",
+    "sh ~/.config/eww/scripts/main_updater",
 }
 
 
